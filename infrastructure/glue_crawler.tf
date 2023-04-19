@@ -1,7 +1,7 @@
 # create glue crawler
 
-resource "aws_glue_crawler" "processed_data_crawler2" {
-  name          = "processed-data-crawler2"
+resource "aws_glue_crawler" "processed_data_crawler" {
+  name          = "processed-data-crawler"
   role          = aws_iam_role.glue_role.arn
   database_name = "edc_mod3_desafio_database"
 

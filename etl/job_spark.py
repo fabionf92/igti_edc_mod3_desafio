@@ -40,7 +40,6 @@ spark_df = (
     .coalesce(50)
     .write.mode('overwrite')
     .format('parquet')
-    .option('axis', 1)
     .save(save_bucket)
 )
 

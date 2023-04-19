@@ -5,7 +5,7 @@
 ###############
 
 resource "aws_iam_role" "glue_role" {
-  name = "IGTIGlueCrawlerRole3"
+  name = "IGTIGlueCrawlerRole"
 
   assume_role_policy = <<EOF
 {
@@ -28,7 +28,7 @@ EOF
 }
 
 resource "aws_iam_policy" "glue_policy" {
-  name        = "IGTIAWSGlueServiceRole3"
+  name        = "IGTIAWSGlueServiceRole"
   path        = "/"
   description = "Policy for AWS Glue service role which allows access to related services including EC2, S3, and Cloudwatch Logs"
 
