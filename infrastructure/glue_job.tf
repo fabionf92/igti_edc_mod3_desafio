@@ -1,9 +1,9 @@
 ## create glue job
 
-# resource "aws_cloudwatch_log_group" "edc-mod3-desafio" {
-#   name              = "edc-mod3-desafio-log-group"
-#   retention_in_days = 3
-# }
+resource "aws_cloudwatch_log_group" "edc-mod3-desafio" {
+  name              = "edc-mod3-desafio-log-group"
+  retention_in_days = 3
+}
 
 resource "aws_glue_job" "edc-mod3-desafio" {
   name         = "edc-mod3-desafio-job-spark"

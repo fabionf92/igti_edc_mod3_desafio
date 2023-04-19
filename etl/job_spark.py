@@ -19,8 +19,6 @@ args = getResolvedOptions(sys.argv, ['JOB_NAME'])
 sc = SparkContext()
 glueContext = GlueContext(sc)
 spark = glueContext.spark_session
-job = Job(glueContext)
-job.init(args['JOB_NAME'], args)
 
 # read files
 
@@ -35,14 +33,17 @@ spark_df = (
     .load(load_bucket)
 )
 
-# save data in parquet formar
+# save data in parquet format
 
 (
     spark_df
     .coalesce(50)
     .write.mode('overwrite')
     .format('parquet')
+    .option('axis', 1)
     .save(save_bucket)
 )
 
+job = Job(glueContext)
+job.init(args['JOB_NAME'], args)
 job.commit()
