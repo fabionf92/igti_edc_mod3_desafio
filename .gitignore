@@ -1,1 +1,3 @@
 2.DADOS/
+infrastructure/.terraform/
+infrastructure/.terraform.lock.hcl
