@@ -28,7 +28,7 @@ spark_df = (
     .format('csv')
     .option('header', True)
     .option('inferSchema', True)
-    .option('delimiter', ';')
+    .option('delimiter', ',')
     .option('enconding', 'latin1')
     .load(load_bucket)
 )
